@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="macroFontSize">44sp</dimen>
+    <dimen name="hugeFontSize">32sp</dimen>
+    <dimen name="bigFontSize">28sp</dimen>
+    <dimen name="regularFontSize">24sp</dimen>
+    <dimen name="minorFontSize">20sp</dimen>
+    <dimen name="tinyFontSize">17sp</dimen>
+    <dimen name="microFontSize">15sp</dimen>
+</resources>

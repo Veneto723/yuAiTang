@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:background="@drawable/border" android:id="@+id/root">
+    <TextView android:layout_width="match_parent" android:layout_height="85dp"
+              android:gravity="center" android:id="@+id/header"
+              android:textSize="@dimen/bigFontSize" android:textColor="@color/white"
+              android:background="@drawable/top_radius_background"/>
+    <ImageView android:layout_width="150dp" android:layout_height="150dp"
+               android:id="@+id/create" android:src="@drawable/create"
+               android:visibility="gone" android:layout_gravity="center"
+               android:layout_marginTop="50dp"/>
+    <GridLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:paddingStart="20dp" android:paddingEnd="20dp"
+                android:layout_marginTop="40dp" android:id="@+id/detailedInfo"
+                android:rowCount="3" android:columnCount="3">
+        <!--    设备种类    -->
+        <TextView android:layout_width="150dp" android:layout_height="50dp"
+                  android:textSize="@dimen/regularFontSize" android:text="@string/equip_type"
+                  android:textColor="@color/colorPrimary" android:gravity="center_vertical|start"
+                  android:layout_row="0" android:layout_column="0" android:layout_marginBottom="20dp"/>
+        <FrameLayout android:layout_width="150dp" android:layout_height="50dp"
+                     android:background="@drawable/border" android:layout_row="0" android:layout_column="1">
+            <Spinner android:layout_width="match_parent" android:layout_height="match_parent"
+                     android:id="@+id/equip_type"/>
+        </FrameLayout>
+        <ImageView android:layout_width="50dp" android:layout_height="50dp"
+                   android:layout_row="0" android:layout_column="2"
+                   android:layout_gravity="end" android:id="@+id/typeIndicator"/>
+
+        <!--    设备状态    -->
+        <TextView android:layout_width="150dp" android:layout_height="50dp"
+                  android:textSize="@dimen/regularFontSize" android:text="@string/equip_status"
+                  android:textColor="@color/colorPrimary" android:gravity="center_vertical|start"
+                  android:layout_row="1" android:layout_column="0" android:layout_marginBottom="20dp"/>
+        <TextView android:layout_width="150dp" android:layout_height="50dp" android:id="@+id/equip_status"
+                  android:layout_row="1" android:layout_column="1" android:gravity="end"
+                  android:textSize="@dimen/regularFontSize" android:textColor="@color/black"/>
+        <ImageView android:layout_width="50dp" android:layout_height="50dp"
+                   android:layout_row="1" android:layout_column="2" android:id="@+id/statusIndicator"
+                   android:layout_gravity="end"/>
+        <!--    绑定继电器    -->
+        <TextView android:layout_width="150dp" android:layout_height="50dp"
+                  android:textSize="@dimen/regularFontSize" android:text="@string/relay"
+                  android:textColor="@color/colorPrimary" android:gravity="center_vertical|start"
+                  android:layout_row="2" android:layout_column="0" android:layout_marginBottom="20dp"/>
+        <FrameLayout android:layout_width="200dp" android:layout_height="50dp"
+                     android:background="@drawable/border" android:layout_row="2" android:layout_column="1"
+                     android:layout_columnSpan="2">
+            <Spinner android:layout_width="match_parent" android:layout_height="match_parent"
+                     android:id="@+id/relay"/>
+        </FrameLayout>
+    </GridLayout>
+
+    <!--    按钮组    -->
+    <GridLayout android:layout_width="match_parent" android:layout_height="50dp"
+                android:paddingStart="20dp" android:paddingEnd="20dp"
+                android:rowCount="1" android:columnCount="2">
+        <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                  android:text="@string/delete" android:textColor="@color/crimson"
+                  android:textSize="@dimen/regularFontSize" android:background="@drawable/crimson_border"
+                  android:gravity="center" android:layout_gravity="bottom" android:id="@+id/delete"
+                  android:layout_column="0" android:layout_row="0"/>
+        <TextView android:layout_width="200dp" android:layout_height="match_parent"
+                  android:text="@string/save" android:textColor="@color/green"
+                  android:textSize="@dimen/regularFontSize" android:background="@drawable/lime_border"
+                  android:gravity="center" android:layout_gravity="bottom|start"
+                  android:layout_marginEnd="50dp" android:id="@+id/save"
+                  android:visibility="gone" android:layout_column="0" android:layout_row="0"/>
+        <TextView android:layout_width="100dp" android:layout_height="match_parent"
+                  android:text="@string/quit" android:textColor="@color/crimson"
+                  android:textSize="@dimen/regularFontSize" android:background="@drawable/crimson_border"
+                  android:gravity="center" android:layout_gravity="bottom|end"
+                  android:id="@+id/quit" android:visibility="gone"
+                  android:layout_column="1" android:layout_row="0"/>
+    </GridLayout>
+</LinearLayout>

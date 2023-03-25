@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical"
+                android:layout_width="match_parent" android:layout_height="match_parent"
+                tools:ignore="PxUsage" android:background="@color/white">
+    <FrameLayout android:id="@+id/notification" android:layout_width="match_parent"
+                 android:layout_height="135px" android:layout_alignParentTop="true"
+                 android:layout_alignParentStart="true"/>
+    <LinearLayout android:id="@+id/equipments" android:layout_width="240px"
+                  android:layout_height="740px" android:layout_alignParentStart="true"
+                  android:layout_marginTop="135px" android:orientation="vertical"
+                  android:background="@drawable/right_border"/>
+    <FrameLayout android:layout_width="240px" android:layout_height="205px"
+                 android:layout_alignParentStart="true" android:layout_alignParentBottom="true"
+                 android:background="@drawable/right_border">
+        <ImageView android:layout_width="200px" android:layout_height="200px"
+                   android:id="@+id/qrcode"
+                   android:layout_gravity="center" android:src="@drawable/qrcode"/>
+    </FrameLayout>
+    <VideoView android:id="@+id/videoView" android:layout_width="1680px"
+               android:layout_height="945px" android:layout_alignParentBottom="true"
+               android:layout_alignParentEnd="true"/>
+    <ImageView android:layout_width="1680px" android:layout_height="945px"
+               android:scaleType="center" android:id="@+id/imageView"
+               android:layout_alignParentBottom="true" android:visibility="gone"
+               android:layout_alignParentEnd="true"/>
+    <LinearLayout android:layout_width="1680px" android:layout_height="945px"
+                  android:layout_alignParentEnd="true" android:layout_alignParentBottom="true"
+                  android:orientation="horizontal">
+        <!-- 扫脸框 -->
+        <FrameLayout android:layout_width="600dp" android:layout_height="800dp"
+                     android:layout_gravity="center" android:id="@+id/facial"
+                     android:layout_marginStart="150dp" android:layout_marginEnd="100dp"
+                     android:visibility="gone"/>
+
+        <!-- 舌诊结果 -->
+        <LinearLayout android:layout_width="600dp" android:layout_height="800dp"
+                      android:layout_gravity="center_vertical" android:orientation="vertical"
+                      android:id="@+id/tongueResult" android:visibility="gone"/>
+
+        <!-- 扫脸结果 -->
+        <LinearLayout android:layout_width="600dp" android:layout_height="800dp"
+                      android:layout_gravity="center_vertical" android:orientation="vertical"
+                      android:id="@+id/facialBox" android:visibility="gone">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="200dp"
+                          android:background="@drawable/color_primary_background"
+                          android:layout_marginBottom="100dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:textSize="@dimen/hugeFontSize"
+                          android:layout_marginStart="25dp" android:id="@+id/hint"
+                          android:gravity="center" android:layout_gravity="center_vertical"
+                          android:textColor="@color/white"/>
+                <ImageView android:layout_width="100dp" android:layout_height="100dp"
+                           android:background="@drawable/white_border" android:scaleType="centerCrop"
+                           android:layout_marginStart="25dp" android:layout_marginEnd="50dp"
+                           android:id="@+id/avatar" android:layout_gravity="center_vertical"
+                           android:visibility="gone"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:textSize="@dimen/hugeFontSize" android:text="@string/wechat_name"
+                          android:id="@+id/wechatName"
+                          android:gravity="center" android:layout_gravity="center_vertical"
+                          android:textColor="@color/white" android:visibility="gone"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="200dp"
+                          android:orientation="horizontal" android:layout_marginBottom="100dp">
+                <TextView android:layout_width="275dp" android:layout_height="match_parent"
+                          android:textSize="@dimen/hugeFontSize" android:textColor="@color/colorPrimary"
+                          android:gravity="center" android:id="@+id/bodyTemp"
+                          android:background="@drawable/border"
+                          android:layout_marginEnd="50dp"/>
+                <TextView android:layout_width="275dp" android:layout_height="match_parent"
+                          android:textSize="@dimen/hugeFontSize" android:textColor="@color/colorPrimary"
+                          android:gravity="center" android:id="@+id/heartRate"
+                          android:background="@drawable/border"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="200dp"
+                          android:orientation="horizontal" android:id="@+id/after" android:visibility="gone">
+                <ImageView android:layout_width="200dp" android:layout_height="match_parent"
+                           android:src="@drawable/qrcode" android:layout_marginEnd="150dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
+                          android:text="@string/qrcode_scan" android:textColor="@color/colorPrimary"
+                          android:gravity="center" android:textSize="@dimen/bigFontSize"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <FrameLayout android:layout_width="1680px" android:layout_height="945px"
+                 android:id="@+id/loading" android:background="@color/translucent"
+                 android:elevation="5dp" android:layout_alignParentBottom="true"
+                 android:layout_alignParentEnd="true" android:visibility="gone">
+        <ProgressBar android:layout_width="300dp" android:layout_height="300dp"
+                     android:layout_gravity="center" android:indeterminateTint="@color/white"/>
+    </FrameLayout>
+    <LinearLayout android:layout_width="500px" android:layout_height="280px"
+                  android:orientation="vertical" android:background="@drawable/white_back_border"
+                  android:layout_alignParentTop="true" android:layout_alignParentStart="true"
+                  android:layout_marginTop="400dp" android:layout_marginStart="750dp"
+                  android:id="@+id/upgradeBanner">
+        <TextView android:layout_width="match_parent" android:layout_height="200px"
+                  android:gravity="center" android:text="@string/upgradeHint"
+                  android:textColor="@color/colorPrimary" android:textSize="@dimen/hugeFontSize"
+                  android:id="@+id/upgrateHint"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="100px"
+                      android:orientation="horizontal" android:id="@+id/upgradeBtns">
+            <Button android:layout_width="100px" android:layout_height="60px"
+                    android:text="放弃" android:id="@+id/quit" android:textSize="@dimen/regularFontSize"
+                    android:textColor="@color/colorPrimary" android:background="@drawable/border"
+                    android:layout_marginEnd="200px" android:layout_marginStart="50px"/>
+            <Button android:layout_width="100px" android:layout_height="60px" android:textSize="@dimen/regularFontSize"
+                    android:textColor="@color/colorPrimary" android:background="@drawable/border"
+                    android:text="确定" android:id="@+id/upgrade"/>
+        </LinearLayout>
+        <ProgressBar android:layout_width="wrap_content" android:layout_height="70px"
+                     android:id="@+id/upgradeProgress" android:indeterminateTint="@color/colorPrimary"
+                     android:layout_marginStart="210px"/>
+    </LinearLayout>
+</RelativeLayout>

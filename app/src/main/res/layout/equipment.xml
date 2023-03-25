@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="220dp" android:layout_height="80dp"
+                android:layout_marginTop="10dp" android:background="@drawable/color_primary_background"
+                android:layout_gravity="center_horizontal" android:id="@+id/root">
+    <ImageView android:layout_width="60dp" android:layout_height="60dp"
+               android:id="@+id/equipIcon" android:layout_marginStart="20dp" android:layout_marginTop="10dp"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="@string/facilityName" android:id="@+id/facilityName"
+              android:background="@drawable/white_background"
+              android:textSize="@dimen/regularFontSize" android:textColor="@color/colorPrimary" android:layout_alignParentTop="true"
+              android:layout_marginStart="60dp" android:layout_marginTop="5dp"
+              android:paddingStart="5dp" android:paddingEnd="5dp"/>
+    <ImageView android:layout_width="40dp" android:layout_height="40dp" android:id="@+id/statusIndicator"
+               android:layout_marginStart="100dp" android:layout_marginEnd="5dp"
+               android:layout_marginTop="20dp"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
+              android:id="@+id/statusText" android:textSize="@dimen/regularFontSize"
+              android:textColor="@color/white" android:layout_marginEnd="15dp"
+              android:layout_alignParentEnd="true" android:gravity="center_vertical"/>
+</RelativeLayout>

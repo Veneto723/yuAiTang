@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent" android:layout_height="match_parent"
+              android:background="@drawable/face_border">
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:textSize="@dimen/hugeFontSize" android:id="@+id/upperAlert" android:elevation="10dp"
+              android:textColor="@color/colorPrimary" android:layout_alignParentTop="true"
+              android:gravity="center" android:layout_marginTop="20dp"
+              android:layout_marginStart="50dp" android:layout_marginEnd="50dp"
+              android:paddingStart="10dp" android:paddingEnd="10dp"
+              android:minHeight="100dp" android:background="@drawable/translucent_background"/>
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:textSize="@dimen/hugeFontSize" android:id="@+id/lowerAlert" android:elevation="10dp"
+              android:textColor="@color/colorPrimary" android:layout_alignParentBottom="true"
+              android:gravity="center" android:layout_marginBottom="20dp"
+              android:layout_marginStart="50dp" android:layout_marginEnd="50dp"
+              android:paddingStart="10dp" android:paddingEnd="10dp"
+              android:minHeight="100dp" android:background="@drawable/translucent_background"/>
+    <ImageView android:layout_width="match_parent" android:layout_height="match_parent"
+               android:src="@drawable/facial_contour" android:id="@+id/face"
+               android:elevation="5dp" android:layout_marginTop="80dp"/>
+    <ImageView android:layout_width="match_parent" android:layout_height="match_parent"
+               android:src="@drawable/tongue_contour" android:id="@+id/tongue"
+               android:elevation="5dp" android:layout_marginTop="250dp"
+               android:layout_marginStart="200dp" android:layout_marginEnd="200dp"
+               android:visibility="gone"/>
+    <ImageView android:layout_width="match_parent" android:layout_height="match_parent"
+               android:layout_alignParentTop="true" android:layout_alignParentStart="true"
+               android:id="@+id/preview"/>
+
+</RelativeLayout>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools" android:orientation="horizontal"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            tools:ignore="PxUsage" android:rowCount="2" android:columnCount="2">
+    <FrameLayout android:layout_width="match_parent" android:layout_height="135px"
+                 android:background="@color/colorPrimary" android:layout_row="0"
+                 android:layout_column="0" android:layout_columnSpan="2"
+                 android:layout_marginBottom="40dp">
+        <ImageView android:layout_width="40dp" android:layout_height="40dp"
+                   android:src="@drawable/back" android:layout_gravity="start|center_vertical"
+                   android:layout_marginStart="60dp" android:id="@+id/back"/>
+        <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                  android:text="@string/serialPortTest" android:layout_gravity="center"
+                  android:gravity="center" android:textColor="@color/white" android:textSize="@dimen/macroFontSize"/>
+    </FrameLayout>
+    <!-- Left half -->
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:orientation="vertical" android:layout_column="0"
+                  android:layout_row="1" android:background="@drawable/right_border"
+                  android:paddingStart="50dp" android:paddingEnd="190dp">
+        <!-- 串口配置 -->
+        <TextView android:layout_width="700dp" android:layout_height="50dp"
+                  android:text="@string/port_settings" android:background="@drawable/bottom_border"
+                  android:gravity="start|center_vertical" android:textColor="@color/colorPrimary"
+                  android:textSize="@dimen/hugeFontSize" android:paddingStart="20dp" android:paddingEnd="0dp"
+                  android:layout_marginBottom="20dp"/>
+        <!-- 选择串口物理地址 -->
+        <LinearLayout android:layout_width="700dp" android:layout_height="60dp"
+                      android:orientation="horizontal"
+                      android:paddingStart="20dp" android:paddingEnd="0dp" android:layout_marginEnd="20dp">
+            <TextView android:layout_width="150dp" android:layout_height="match_parent"
+                      android:textColor="@color/colorPrimary" android:textSize="@dimen/bigFontSize"
+                      android:text="@string/port_location" android:layout_gravity="center_vertical"
+                      android:gravity="center_vertical"/>
+            <FrameLayout android:layout_width="200dp" android:layout_height="match_parent"
+                         android:background="@drawable/border">
+                <Spinner android:layout_width="match_parent" android:layout_height="match_parent"
+                         android:id="@+id/port_location"/>
+            </FrameLayout>
+
+        </LinearLayout>
+        <!-- 选择串口波特率 -->
+        <LinearLayout android:layout_width="700dp" android:layout_height="60dp"
+                      android:orientation="horizontal"
+                      android:paddingStart="20dp" android:paddingEnd="0dp"
+                      android:layout_marginTop="20dp" android:layout_marginEnd="20dp">
+            <TextView android:layout_width="150dp" android:layout_height="match_parent"
+                      android:textColor="@color/colorPrimary" android:textSize="@dimen/bigFontSize"
+                      android:text="@string/baud" android:layout_gravity="center_vertical"
+                      android:gravity="center_vertical"/>
+            <FrameLayout android:layout_width="200dp" android:layout_height="match_parent"
+                         android:background="@drawable/border">
+                <Spinner android:layout_width="match_parent" android:layout_height="match_parent"
+                         android:id="@+id/baud"/>
+            </FrameLayout>
+        </LinearLayout>
+        <!-- 选清空指令池 -->
+        <LinearLayout android:layout_width="700dp" android:layout_height="60dp"
+                      android:orientation="horizontal"
+                      android:paddingStart="20dp" android:paddingEnd="0dp"
+                      android:layout_marginTop="20dp" android:layout_marginEnd="20dp">
+            <Button android:layout_width="200dp" android:layout_height="match_parent"
+                    android:id="@+id/clear" android:text="@string/clearPool"
+                    android:textColor="@color/colorPrimary" android:textSize="@dimen/bigFontSize"
+                    android:background="@drawable/border"/>
+            <Button android:layout_width="200dp" android:layout_height="match_parent"
+                    android:id="@+id/restore" android:text="@string/all_restore"
+                    android:textColor="@color/colorPrimary" android:textSize="@dimen/bigFontSize"
+                    android:background="@drawable/border"/>
+        </LinearLayout>
+        <!-- 通讯日志 -->
+        <TextView android:layout_width="700dp" android:layout_height="50dp"
+                  android:text="@string/serialPortLog" android:background="@drawable/bottom_border"
+                  android:gravity="start|center_vertical" android:textColor="@color/colorPrimary"
+                  android:textSize="@dimen/hugeFontSize" android:paddingStart="20dp" android:paddingEnd="0dp"
+                  android:layout_marginTop="100dp" android:layout_marginBottom="20dp"/>
+        <FrameLayout android:layout_width="660dp" android:layout_height="400dp"
+                     android:id="@+id/console" android:layout_marginStart="20dp"/>
+    </LinearLayout>
+    <!-- Right half -->
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:orientation="vertical" android:layout_column="1"
+                  android:layout_row="1" android:paddingStart="50dp" android:paddingEnd="0dp"
+                  android:id="@+id/equipRelevant" android:visibility="gone">
+        <TextView android:layout_width="700dp" android:layout_height="50dp"
+                  android:text="@string/equipments" android:background="@drawable/bottom_border"
+                  android:gravity="start|center_vertical" android:textColor="@color/colorPrimary"
+                  android:textSize="@dimen/hugeFontSize" android:paddingStart="20dp" android:paddingEnd="0dp"
+                  android:layout_marginBottom="20dp"/>
+        <GridLayout android:layout_width="700dp" android:layout_height="wrap_content"
+                    android:columnCount="4" android:id="@+id/equipments">
+        </GridLayout>
+        <!-- 设备详情 -->
+        <TextView android:layout_width="700dp" android:layout_height="50dp"
+                  android:text="@string/equipment" android:background="@drawable/bottom_border"
+                  android:gravity="start|center_vertical" android:textColor="@color/colorPrimary"
+                  android:textSize="@dimen/hugeFontSize" android:paddingStart="20dp" android:paddingEnd="0dp"
+                  android:layout_marginTop="100dp" android:layout_marginBottom="20dp"
+                  android:id="@+id/focusedEquipText"/>
+        <!-- 按钮组#1：设备状态 -->
+        <GridLayout android:layout_width="700dp" android:layout_height="wrap_content"
+                    android:columnCount="4" android:id="@+id/com_1_btnBox">
+            <LinearLayout android:layout_width="135dp" android:layout_height="80dp"
+                          android:id="@+id/occupied" android:orientation="vertical"
+                          android:background="@drawable/border" android:layout_marginStart="20dp"
+                          android:layout_marginEnd="20dp" android:layout_marginBottom="20dp">
+                <ImageView android:layout_width="40dp" android:layout_height="40dp"
+                           android:src="@drawable/occupied" android:layout_gravity="center"
+                           android:layout_marginTop="10dp"/>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:text="@string/occupied" android:layout_gravity="bottom"
+                          android:gravity="center" android:textColor="@color/colorPrimary"
+                          android:textSize="@dimen/tinyFontSize"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="135dp" android:layout_height="80dp"
+                          android:id="@+id/appointed" android:orientation="vertical"
+                          android:background="@drawable/border" android:layout_marginStart="20dp"
+                          android:layout_marginEnd="20dp" android:layout_marginBottom="20dp">
+                <ImageView android:layout_width="40dp" android:layout_height="40dp"
+                           android:src="@drawable/appointed" android:layout_gravity="center"
+                           android:layout_marginTop="10dp"/>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:text="@string/appointed" android:layout_gravity="bottom"
+                          android:gravity="center" android:textColor="@color/colorPrimary"
+                          android:textSize="@dimen/tinyFontSize"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="135dp" android:layout_height="80dp"
+                          android:id="@+id/available" android:orientation="vertical"
+                          android:background="@drawable/border" android:layout_marginStart="20dp"
+                          android:layout_marginEnd="20dp" android:layout_marginBottom="20dp">
+                <ImageView android:layout_width="40dp" android:layout_height="40dp"
+                           android:src="@drawable/available" android:layout_gravity="center"
+                           android:layout_marginTop="10dp"/>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:text="@string/available" android:layout_gravity="bottom"
+                          android:gravity="center" android:textColor="@color/colorPrimary"
+                          android:textSize="@dimen/tinyFontSize"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="135dp" android:layout_height="80dp"
+                          android:id="@+id/next" android:orientation="vertical"
+                          android:background="@drawable/border" android:layout_marginStart="20dp"
+                          android:layout_marginEnd="20dp" android:layout_marginBottom="20dp">
+                <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                          android:text="@string/next" android:layout_gravity="center"
+                          android:gravity="center" android:textColor="@color/colorPrimary"
+                          android:textSize="@dimen/regularFontSize"/>
+            </LinearLayout>
+        </GridLayout>
+        <!-- 按钮组#2：设备电源 -->
+        <GridLayout android:layout_width="700dp" android:layout_height="wrap_content"
+                    android:columnCount="4" android:id="@+id/com_2_btnBox">
+            <LinearLayout android:layout_width="135dp" android:layout_height="80dp"
+                          android:id="@+id/shutdown" android:orientation="vertical"
+                          android:background="@drawable/border" android:layout_marginStart="20dp"
+                          android:layout_marginEnd="20dp" android:layout_marginBottom="20dp">
+                <ImageView android:layout_width="40dp" android:layout_height="40dp"
+                           android:src="@drawable/occupied" android:layout_gravity="center"
+                           android:layout_marginTop="10dp"/>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:text="@string/shutdown" android:layout_gravity="bottom"
+                          android:gravity="center" android:textColor="@color/colorPrimary"
+                          android:textSize="@dimen/tinyFontSize"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="135dp" android:layout_height="80dp"
+                          android:id="@+id/on" android:orientation="vertical"
+                          android:background="@drawable/border" android:layout_marginStart="20dp"
+                          android:layout_marginEnd="20dp" android:layout_marginBottom="20dp">
+                <ImageView android:layout_width="40dp" android:layout_height="40dp"
+                           android:src="@drawable/available" android:layout_gravity="center"
+                           android:layout_marginTop="10dp"/>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:text="@string/on" android:layout_gravity="bottom"
+                          android:gravity="center" android:textColor="@color/colorPrimary"
+                          android:textSize="@dimen/tinyFontSize"/>
+            </LinearLayout>
+        </GridLayout>
+    </LinearLayout>
+    <!-- Right half version#2 -->
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:orientation="vertical" android:layout_column="1"
+                  android:layout_row="1" android:paddingStart="50dp" android:paddingEnd="0dp"
+                  android:id="@+id/cameraRelevant">
+        <ImageView android:layout_width="600dp" android:layout_height="800dp"
+                   android:id="@+id/prototype" android:background="@drawable/border"
+                   android:layout_marginStart="100dp"/>
+    </LinearLayout>
+</GridLayout>

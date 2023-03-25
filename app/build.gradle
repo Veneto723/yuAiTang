@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.yuAiTang.moxi"
+        minSdkVersion 22
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0.18"
+        ndk{
+            abiFilters 'armeabi-v7a', 'x86_64', 'x86'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            jni.srcDirs=[]
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'org.jetbrains:annotations:20.1.0'
+    implementation 'com.quickbirdstudios:opencv:4.3.0' // opencv图形处理
+    implementation 'ddf.minim:ddf.minim:2.2.0' // ddf 用于快速傅里叶变化，心率监测
+    implementation 'me.weishu:free_reflection:1.2.0' // Cockroach使用
+}

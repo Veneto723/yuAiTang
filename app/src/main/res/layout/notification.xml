@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent" android:layout_height="match_parent"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="horizontal" android:background="@color/colorPrimary"
+              android:id="@+id/root" tools:ignore="PxUsage">
+    <LinearLayout android:layout_width="150px" android:layout_height="100dp"
+                  android:layout_marginStart="10px" android:layout_gravity="center"
+                  android:gravity="center" android:orientation="vertical">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:textSize="@dimen/bigFontSize" android:id="@+id/time"
+                  android:textColor="@color/white"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:textSize="@dimen/regularFontSize" android:id="@+id/date"
+                  android:textColor="@color/white"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:textSize="@dimen/bigFontSize" android:id="@+id/temperature"
+                  android:textColor="@color/white"/>
+    </LinearLayout>
+    <GridLayout android:layout_width="50px" android:layout_height="match_parent"
+                android:rowCount="2" android:layout_marginStart="10px"
+                android:columnCount="1">
+        <ImageView android:layout_width="match_parent" android:layout_height="50dp"
+                   android:src="@drawable/wifi_none" android:layout_gravity="top"
+                   android:id="@+id/internet" android:layout_row="0"
+                   android:scaleType="fitCenter" android:layout_marginTop="20dp"/>
+        <ImageView android:layout_width="match_parent" android:layout_height="50dp"
+                   android:src="@drawable/speaker" android:layout_gravity="bottom"
+                   android:id="@+id/microphone" android:layout_row="1"
+                   android:layout_marginBottom="20dp"/>
+    </GridLayout>
+    <HorizontalScrollView android:layout_width="1740px" android:layout_height="100dp"
+                          android:scrollbars="none"
+                          android:background="@drawable/color_primary_dark_background"
+                          android:layout_gravity="center" android:layout_marginStart="20dp"
+                          android:layout_marginEnd="20dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
+                  android:id="@+id/info" android:textSize="@dimen/macroFontSize" android:paddingStart="1740px"
+                  android:paddingEnd="0dp" android:textColor="@color/white"
+                  android:gravity="center_vertical"/>
+    </HorizontalScrollView>
+</LinearLayout>
